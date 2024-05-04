@@ -2,11 +2,18 @@ package kh.farrukh.springcore.staff;
 
 import org.springframework.stereotype.Component;
 
-@Component("componentProjectManager")
+@Component
 public class ProjectManager {
 
-  public void manageProject() {
-    System.out.println("ProjectManager (" + this + ") is managing project");
+  private final BusinessAnalyst businessAnalyst;
+
+  public ProjectManager(BusinessAnalyst businessAnalyst) {
+    this.businessAnalyst = businessAnalyst;
+  }
+
+  public void manageProject(String projectName) {
+    System.out.println("ProjectManager (" + this + ") is managing project: " + projectName);
+    businessAnalyst.analyze(projectName);
   }
 
 }
