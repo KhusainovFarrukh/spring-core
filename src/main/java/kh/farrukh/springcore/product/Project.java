@@ -7,12 +7,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Project {
 
-  private ProjectManager projectManager;
-
   @Autowired
-  public void setProjectManager(ProjectManager projectManager) {
-    this.projectManager = projectManager;
-  }
+  private ProjectManager projectManager;
 
   public void startProject(String projectName) {
     projectManager.manageProject(projectName);

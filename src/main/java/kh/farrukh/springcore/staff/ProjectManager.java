@@ -6,12 +6,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProjectManager {
 
-  private BusinessAnalyst businessAnalyst;
-
   @Autowired
-  public void setBusinessAnalyst(BusinessAnalyst businessAnalyst) {
-    this.businessAnalyst = businessAnalyst;
-  }
+  private BusinessAnalyst businessAnalyst;
 
   public void manageProject(String projectName) {
     System.out.println("ProjectManager (" + this + ") is managing project: " + projectName);
