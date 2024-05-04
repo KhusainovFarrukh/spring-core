@@ -1,4 +1,7 @@
-package kh.farrukh.springcore.staff;
+package kh.farrukh.springcore;
+
+import kh.farrukh.springcore.staff.BusinessAnalyst;
+import kh.farrukh.springcore.staff.ProjectManager;
 
 public class SoftwareCompany {
 
