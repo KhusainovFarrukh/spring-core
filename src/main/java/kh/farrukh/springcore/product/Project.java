@@ -1,14 +1,16 @@
 package kh.farrukh.springcore.product;
 
 import kh.farrukh.springcore.staff.ProjectManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Project {
 
-  private final ProjectManager projectManager;
+  private ProjectManager projectManager;
 
-  public Project(ProjectManager projectManager) {
+  @Autowired
+  public void setProjectManager(ProjectManager projectManager) {
     this.projectManager = projectManager;
   }
 

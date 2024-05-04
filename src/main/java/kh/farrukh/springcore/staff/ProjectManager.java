@@ -1,13 +1,15 @@
 package kh.farrukh.springcore.staff;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProjectManager {
 
-  private final BusinessAnalyst businessAnalyst;
+  private BusinessAnalyst businessAnalyst;
 
-  public ProjectManager(BusinessAnalyst businessAnalyst) {
+  @Autowired
+  public void setBusinessAnalyst(BusinessAnalyst businessAnalyst) {
     this.businessAnalyst = businessAnalyst;
   }
 
