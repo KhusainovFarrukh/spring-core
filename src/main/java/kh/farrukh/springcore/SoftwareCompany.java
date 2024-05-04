@@ -14,10 +14,12 @@ public class SoftwareCompany {
     ApplicationContext appContext =
         new AnnotationConfigApplicationContext(SoftwareCompanyConfig.class);
 
-    ProjectManager projectManager = appContext.getBean("projectManager", ProjectManager.class);
+    ProjectManager projectManager = appContext
+        .getBean("componentProjectManager", ProjectManager.class);
     projectManager.manageProject();
 
-    BusinessAnalyst businessAnalyst = appContext.getBean("businessAnalyst", BusinessAnalyst.class);
+    BusinessAnalyst businessAnalyst = appContext
+        .getBean("componentBusinessAnalyst", BusinessAnalyst.class);
     businessAnalyst.analyze();
   }
 
