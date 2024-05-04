@@ -21,6 +21,10 @@ public class SoftwareCompany {
     BusinessAnalyst businessAnalyst = appContext
         .getBean("componentBusinessAnalyst", BusinessAnalyst.class);
     businessAnalyst.analyze();
+
+    BusinessAnalyst outStaffBusinessAnalyst = appContext
+        .getBean("outStaffBusinessAnalyst", BusinessAnalyst.class);
+    outStaffBusinessAnalyst.analyze();
   }
 
 }

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class ProjectManager {
 
   public void manageProject() {
-    System.out.println("ProjectManager is managing project");
+    System.out.println("ProjectManager (" + this + ") is managing project");
   }
 
 }

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class BusinessAnalyst {
 
   public void analyze() {
-    System.out.println("BusinessAnalyst is analyzing");
+    System.out.println("BusinessAnalyst (" + this + ") is analyzing");
   }
 
 }
