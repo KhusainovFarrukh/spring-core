@@ -1,6 +1,6 @@
-package kh.farrukh.springcore.product;
+package kh.farrukh.springcore.firstmodule.product;
 
-import kh.farrukh.springcore.staff.ProjectManager;
+import kh.farrukh.springcore.firstmodule.staff.ProjectManager;
 import org.springframework.stereotype.Component;
 
 @Component

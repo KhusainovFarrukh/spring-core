@@ -1,10 +1,10 @@
-package kh.farrukh.springcore;
+package kh.farrukh.springcore.firstmodule;
 
 import java.util.UUID;
-import kh.farrukh.springcore.config.SoftwareCompanyConfig;
-import kh.farrukh.springcore.product.Project;
-import kh.farrukh.springcore.staff.BusinessAnalyst;
-import kh.farrukh.springcore.staff.ProjectManager;
+import kh.farrukh.springcore.firstmodule.config.SoftwareCompanyConfig;
+import kh.farrukh.springcore.firstmodule.product.Project;
+import kh.farrukh.springcore.firstmodule.staff.BusinessAnalyst;
+import kh.farrukh.springcore.firstmodule.staff.ProjectManager;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

@@ -1,7 +1,7 @@
-package kh.farrukh.springcore.config;
+package kh.farrukh.springcore.firstmodule.config;
 
 import java.util.UUID;
-import kh.farrukh.springcore.staff.BusinessAnalyst;
+import kh.farrukh.springcore.firstmodule.staff.BusinessAnalyst;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

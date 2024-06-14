@@ -1,4 +1,4 @@
-package kh.farrukh.springcore.staff;
+package kh.farrukh.springcore.firstmodule.staff;
 
 import java.util.UUID;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
