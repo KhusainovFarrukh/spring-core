@@ -9,6 +9,9 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 public @interface Discount {
 
-  int value();
+  int value() default 0;
+
+  String qualifier() default "";
+
 
 }

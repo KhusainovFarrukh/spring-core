@@ -3,7 +3,7 @@ package kh.farrukh.springcore.postprocessor.bean;
 import kh.farrukh.springcore.postprocessor.discount.Discount;
 import kh.farrukh.springcore.postprocessor.discount.Discountable;
 
-@Discount(10)
+@Discount(value = 10, qualifier = "BMW")
 public class Car extends Discountable {
 
   private final String producer;
@@ -21,6 +21,11 @@ public class Car extends Discountable {
 
   public String getName() {
     return name;
+  }
+
+  @Override
+  public String getQualifier() {
+    return producer;
   }
 
 }

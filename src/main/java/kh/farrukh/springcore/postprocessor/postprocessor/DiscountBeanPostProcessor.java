@@ -1,5 +1,6 @@
 package kh.farrukh.springcore.postprocessor.postprocessor;
 
+import java.util.Objects;
 import kh.farrukh.springcore.postprocessor.discount.Discount;
 import kh.farrukh.springcore.postprocessor.discount.Discountable;
 import org.springframework.beans.BeansException;
@@ -15,7 +16,10 @@ public class DiscountBeanPostProcessor implements BeanPostProcessor {
     if (bean instanceof Discountable discountable) {
       var discount = discountable.getClass().getAnnotation(Discount.class);
       if (discount != null) {
-        discountable.setDiscount(discount.value());
+        var qualifier = discount.qualifier();
+        if (Objects.equals(qualifier, discountable.getQualifier())) {
+          discountable.setDiscount(discount.value());
+        }
       }
     }
 

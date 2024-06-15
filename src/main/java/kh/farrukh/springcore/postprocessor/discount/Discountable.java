@@ -4,6 +4,8 @@ public abstract class Discountable {
 
   protected int discount;
 
+  public abstract String getQualifier();
+
   public int getDiscount() {
     return this.discount;
   }
