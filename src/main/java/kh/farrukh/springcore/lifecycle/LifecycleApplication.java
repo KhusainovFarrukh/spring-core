@@ -10,7 +10,9 @@ public class LifecycleApplication {
     var context = new AnnotationConfigApplicationContext(LifecycleAppConfig.class);
 
     var laptopMaker = context.getBean(LaptopMaker.class);
-    laptopMaker.makeLaptop();
+    laptopMaker.makeLaptop("ips");
+    laptopMaker.makeLaptop("led");
+    laptopMaker.makeLaptop("oled");
 
     context.close();
   }
