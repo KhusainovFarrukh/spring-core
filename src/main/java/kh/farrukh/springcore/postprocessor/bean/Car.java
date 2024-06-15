@@ -1,6 +1,10 @@
 package kh.farrukh.springcore.postprocessor.bean;
 
-public class Car {
+import kh.farrukh.springcore.postprocessor.discount.Discount;
+import kh.farrukh.springcore.postprocessor.discount.Discountable;
+
+@Discount(10)
+public class Car extends Discountable {
 
   private final String producer;
 

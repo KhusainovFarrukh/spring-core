@@ -20,7 +20,7 @@ public class CarShop {
   public void printCarList() {
     shopTimes.forEach((key, value) -> System.out.println(key + " : " + value));
     cars.forEach((key, value) -> System.out.println(
-        key + " : " + value.getProducer() + " - " + value.getName()));
+        key + " : " + value.getProducer() + " - " + value.getName() + " (discount = " + value.getDiscount() + "%)"));
   }
 
   public void setOpenTime(LocalTime openTime) {
