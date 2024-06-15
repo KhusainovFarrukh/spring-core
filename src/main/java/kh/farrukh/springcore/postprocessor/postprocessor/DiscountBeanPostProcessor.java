@@ -14,15 +14,28 @@ public class DiscountBeanPostProcessor implements BeanPostProcessor {
   public Object postProcessBeforeInitialization(Object bean, String beanName)
       throws BeansException {
     if (bean instanceof Discountable discountable) {
-      var discount = discountable.getClass().getAnnotation(Discount.class);
-      if (discount != null) {
-        var qualifier = discount.qualifier();
-        if (Objects.equals(qualifier, discountable.getQualifier())) {
-          discountable.setDiscount(discount.value());
+      var discountableClass = discountable.getClass();
+
+      var discount = discountableClass.getAnnotation(Discount.class);
+      applyDiscount(discountable, discount);
+
+      var discounts = discountableClass.getAnnotation(Discount.List.class);
+      if (discounts != null) {
+        for (var discountItem : discounts.value()) {
+          applyDiscount(discountable, discountItem);
         }
       }
     }
 
     return bean;
+  }
+
+  private void applyDiscount(Discountable discountable, Discount discount) {
+    if (discount != null) {
+      var qualifier = discount.qualifier();
+      if (Objects.equals(qualifier, discountable.getQualifier())) {
+        discountable.setDiscount(discount.value());
+      }
+    }
   }
 }

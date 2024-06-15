@@ -13,5 +13,10 @@ public @interface Discount {
 
   String qualifier() default "";
 
+  @Retention(RetentionPolicy.RUNTIME)
+  @Target(ElementType.TYPE)
+  @interface List {
+    Discount[] value();
+  }
 
 }
