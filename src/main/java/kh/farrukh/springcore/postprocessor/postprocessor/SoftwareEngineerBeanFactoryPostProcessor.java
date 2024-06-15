@@ -1,6 +1,5 @@
 package kh.farrukh.springcore.postprocessor.postprocessor;
 
-import kh.farrukh.springcore.postprocessor.bean.SoftwareEngineer;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -12,8 +11,11 @@ public class SoftwareEngineerBeanFactoryPostProcessor implements BeanFactoryPost
   @Override
   public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory)
       throws BeansException {
-    var softwareEngineer = beanFactory.getBean(SoftwareEngineer.class);
-    softwareEngineer.setHasCoffee(true);
+//    var softwareEngineer = beanFactory.getBean(SoftwareEngineer.class);
+//    softwareEngineer.setHasCoffee(true);
+    var beanDefinition = beanFactory.getBeanDefinition("softwareEngineer");
+    var propertyValues = beanDefinition.getPropertyValues();
+    propertyValues.add("hasCoffee", true);
   }
 
 }
