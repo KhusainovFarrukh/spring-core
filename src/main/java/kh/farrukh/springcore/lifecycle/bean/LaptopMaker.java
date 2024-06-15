@@ -4,17 +4,22 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Component;
 
 @Component
 public class LaptopMaker implements InitializingBean, DisposableBean {
 
-  public LaptopMaker() {
+  private final ObjectProvider<Laptop> laptop;
+
+  public LaptopMaker(ObjectProvider<Laptop> laptop) {
+    this.laptop = laptop;
     System.out.println("LaptopMaker constructor");
   }
 
   public void makeLaptop() {
     System.out.println("Laptop is being made");
+    laptop.getObject().powerOn();
   }
 
   @PostConstruct
