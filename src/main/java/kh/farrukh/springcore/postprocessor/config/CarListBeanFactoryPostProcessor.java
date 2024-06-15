@@ -1,5 +1,6 @@
 package kh.farrukh.springcore.postprocessor.config;
 
+import java.time.LocalTime;
 import kh.farrukh.springcore.postprocessor.bean.Car;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
@@ -15,6 +16,9 @@ public class CarListBeanFactoryPostProcessor implements BeanFactoryPostProcessor
   @Override
   public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory)
       throws BeansException {
+    beanFactory.registerSingleton("carShopOpenTime", LocalTime.of(10, 0));
+    beanFactory.registerSingleton("carShopCloseTime", LocalTime.of(17, 0));
+
     addCar("BMW", "Car 1", (DefaultListableBeanFactory) beanFactory);
     addCar("Audi", "Car 2", (DefaultListableBeanFactory) beanFactory);
   }
