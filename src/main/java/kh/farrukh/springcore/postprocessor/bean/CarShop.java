@@ -23,4 +23,7 @@ public class CarShop {
         key + " : " + value.getProducer() + " - " + value.getName()));
   }
 
+  public void setOpenTime(LocalTime openTime) {
+    shopTimes.put("carShopOpenTime", openTime);
+  }
 }
