@@ -1,4 +1,4 @@
-package kh.farrukh.springcore.postprocessor.config;
+package kh.farrukh.springcore.postprocessor.postprocessor;
 
 import java.time.LocalTime;
 import kh.farrukh.springcore.postprocessor.bean.Car;
