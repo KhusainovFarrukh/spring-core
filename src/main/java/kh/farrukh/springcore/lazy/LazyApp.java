@@ -3,11 +3,13 @@ package kh.farrukh.springcore.lazy;
 import kh.farrukh.springcore.lazy.bean.LogisticsCompany;
 import kh.farrukh.springcore.lazy.bean.PhoneShop;
 import kh.farrukh.springcore.lazy.config.LazyConfig;
+import kh.farrukh.springcore.util.CGLibUtils;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class LazyApp {
 
   public static void main(String[] args) {
+    CGLibUtils.initGeneratedClassHandler("build/cglib/lazy");
     var context = new AnnotationConfigApplicationContext(LazyConfig.class);
 
     var phoneShop = context.getBean(PhoneShop.class);
