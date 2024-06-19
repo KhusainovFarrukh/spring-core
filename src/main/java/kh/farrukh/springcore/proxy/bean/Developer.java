@@ -22,6 +22,7 @@ public class Developer implements Worker {
       throw new RuntimeException(e);
     }
     System.out.println(name + " finishes project " + project.getTitle());
+    project.addProgress(50);
   }
 
   //  @CallLimit(limit = 1, qualifier = "workerAction")
