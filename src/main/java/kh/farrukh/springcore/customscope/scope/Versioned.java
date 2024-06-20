@@ -2,6 +2,7 @@ package kh.farrukh.springcore.customscope.scope;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Supplier;
 import kh.farrukh.springcore.customscope.annotation.GetVersion;
 import kh.farrukh.springcore.customscope.annotation.NewVersion;
 import org.springframework.beans.BeanUtils;
@@ -18,13 +19,12 @@ public class Versioned implements Scope {
 
   @Override
   public Object get(String name, ObjectFactory<?> objectFactory) {
+    Supplier<Object> proxySupplier = () -> createProxy(name, objectFactory.getObject());
     var versions = beans.computeIfAbsent(name, k -> new HashMap<>());
 
     if (versions.isEmpty()) {
-      var bean = objectFactory.getObject();
-      var proxy = createProxy(name, bean);
-      versions.put(1, proxy);
-      return proxy;
+      versions.put(1, proxySupplier.get());
+      return proxySupplier.get();
     }
 
     var lastVersion = versions.keySet().stream().max(Integer::compareTo).orElse(0);
