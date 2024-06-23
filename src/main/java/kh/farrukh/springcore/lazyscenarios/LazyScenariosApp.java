@@ -9,8 +9,8 @@ public class LazyScenariosApp {
   public static void main(String[] args) {
     var context = new AnnotationConfigApplicationContext(LazyScenariosConfig.class);
 
-    var onlyClassLazy = context.getBean(OnlyClassLazy.class);
-    onlyClassLazy.print();
+//    var onlyClassLazy = context.getBean(OnlyClassLazy.class);
+//    onlyClassLazy.print();
   }
 
 }
